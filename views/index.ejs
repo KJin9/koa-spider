@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%=title%></title>
+    <style>
+      .title{
+        color:cadetblue;
+      }
+      .artic{
+        margin-top:20px;
+      }
+    </style>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+    
+    <div class="container">
+      <h1><span class="title"><%=title%>--<%=spiderName%></h1>
+      <div class="row">
+        <div class="col-lg-6">
+          <select class="form-control" id="cate">
+            <option value="0">请选择分类</option>
+            <% for(var i=0; i<cate.length; i++){ %>
+              <option value="<%= cate[i]%>"><%= cate[i]%></option>
+            <% } %>
+          </select>
+        </div>
+      </div>
+      
+      <div class="artic">
+        
+      </div>
+
+      <div class="page">
+
+      </div>
+    </div>
+
+    <script type="text/template" id="cnblogs">
+      <ul class="list-group">
+          <li class="list-group-item">
+            <a href="{{= href}}" target="_blank">{{= title}}</a>
+      </ul>
+    </script>
+
+    <script type="text/template" id="pages">
+      <button class="btn btn-default" type="submit" cate="{{= name}}" v>{{= page}}</a>
+    </script>
+
+    <script src="/js/jquery-1.11.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/underscore-min.js"></script>
+
+    <script src="/stylesheets/index.js"></script>
+  </body>
+</html>
